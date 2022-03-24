@@ -1,0 +1,3 @@
+INCLUDE $HPEESOF_DIR/oalibs/analog_rf.defs
+DEFINE PSI3581_lib PSI3581_lib
+ASSIGN PSI3581_lib libMode shared

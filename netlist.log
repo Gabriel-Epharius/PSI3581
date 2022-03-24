@@ -1,0 +1,30 @@
+; Top Design: "PSI3581_lib:filtro_LC:schematic"
+; Netlisted using Hierarchy Policy: "Standard"
+
+Options ResourceUsage=yes UseNutmegFormat=no EnableOptim=no TopDesignName="PSI3581_lib:filtro_LC:schematic" DcopOutputNodeVoltages=yes DcopOutputPinCurrents=yes DcopOutputAllSweepPoints=no DcopOutputDcopType=0
+L:L1  0 P1 L=6.4 nH Noise=yes  
+C:C1  0 P1 C=3 pF 
+C:C2  0 N__1 C=6.4 pF 
+L:L2  0 N__1 L=2 nH Noise=yes  
+C:C3  0 P2 C=3 pF 
+L:L3  0 P2 L=6.4 nH Noise=yes  
+C:C4  N__15 N__1 C=1 pF 
+L:L4  P1 N__15 L=12.9 nH Noise=yes  
+C:C5  N__16 N__1 C=1 pF 
+L:L5  P2 N__16 L=12.9 nH Noise=yes  
+S_Param:SP1 CalcS=yes CalcY=no CalcZ=no GroupDelayAperture=1e-4 FreqConversion=no FreqConversionPort=1 StatusLevel=2 CalcNoise=no SortNoise=0 BandwidthForNoise=1.0 Hz DevOpPtLevel=0 \
+SweepVar="freq" SweepPlan="SP1_stim" OutputPlan="SP1_Output" 
+
+SweepPlan: SP1_stim Start=100 MHz Stop=3 GHz Step=10 MHz 
+
+OutputPlan:SP1_Output \
+      Type="Output" \
+      UseEquationNestLevel=yes \
+      EquationNestLevel=2 \
+      UseSavedEquationNestLevel=yes \
+      SavedEquationNestLevel=2
+
+#load "python","LinearCollapse"
+Component Module="LinearCollapse" Type="ModelExtractor" NetworkRepresentation=2
+Port:TermG1  P1 0 Num=1 Z=50 Ohm Noise=yes 
+Port:TermG2  P2 0 Num=2 Z=50 Ohm Noise=yes 

@@ -1,0 +1,17 @@
+
+hpeesofsim (*) 551.shp Oct 27 2021, MINT version 5
+    (64-bit windows built: Thu Oct 28, 2021 03:25:42 +0000)
+
+
+***** Simulation started at Thu Mar 24 17:25:46 2022
+      Running on host: "GD-A4"
+      In Directory: "C:\Ads\PSI3581\data"
+      Process ID: 7048
+
+
+SP SP1[1] <PSI3581_lib:filtro_LC:schematic>   freq=(100 MHz->3 GHz)
+
+
+Resource usage:
+  Total stopwatch time     =     4.02 seconds.
+
